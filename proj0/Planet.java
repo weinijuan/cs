@@ -1,7 +1,7 @@
 public class Planet
 {
-	double xxPos, yyPos, xxVel, yyVel, mass;
-	String imgFileName;
+	public double xxPos, yyPos, xxVel, yyVel, mass;
+	public String imgFileName;
 	static final double G = 6.67e-11;
 	public Planet(double xxPos,double yyPos,double xxVel,double yyVel,double mass,String imgFileName)
 	{
@@ -66,7 +66,7 @@ public class Planet
 		}
 		return sumY;
 	}
-	public double calcNetForceExertedByXY(Planet[] planets)
+	private double calcNetForceExertedByXY(Planet[] planets)
 	{
 		double sumX = this.calcNetForceExertedByX(planets);
 		double sumY = this.calcNetForceExertedByY(planets);
@@ -79,10 +79,9 @@ public class Planet
 		xxPos += xxVel*dt;
 		yyPos += yyVel*dt;
 	}
-	public void draw(double radiusOfUniverse)
+	public void draw()
 	{
-		StdDraw.picture(xxPos*100/radiusOfUniverse,yyPos*100/radiusOfUniverse,"images/"+imgFileName);
+		StdDraw.picture(xxPos,yyPos,"images/"+imgFileName);
 		StdDraw.show();
-		// StdDraw.pause(2000);
 	}
 }
