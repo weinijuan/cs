@@ -215,7 +215,7 @@ public class ArrayDeque<T>
         {
             return null;
         }
-        if ((double)size / ar.length < 0.25 && size >= 16)
+        if ((double)size / ar.length <= 0.25 && size >= 16)
         {
             resize(0.5);
         }
