@@ -56,37 +56,55 @@ public class ArrayDeque<T>
     }
     public void addFirst(T item)
     {
-        if (size == ar.length)
+        if (size == 0)
         {
-            resize(2);
-        }
-        size++;
-        if (head == 0)
-        {
-            head = ar.length - 1;
+            ar[0] = item;
+            size++;
         }
         else
         {
-            head--;
+            if (size == ar.length)
+            {
+                resize(2);
+            }
+            size++;
+            if (head == 0)
+            {
+                head = ar.length - 1;
+            }
+            else
+            {
+                head--;
+            }
+            ar[head] = item;
         }
-        ar[head] = item;
+
     }
     public void addLast(T item)
     {
-        if (size == ar.length)
+        if (size == 0)
         {
-            resize(2);
-        }
-        size++;
-        if (end == ar.length - 1)
-        {
-            end = 0;
+            ar[0] = item;
+            size++;
         }
         else
         {
-            end++;
+            if (size == ar.length)
+            {
+                resize(2);
+            }
+            size++;
+            if (end == ar.length - 1)
+            {
+                end = 0;
+            }
+            else
+            {
+                end++;
+            }
+            ar[end] = item;
         }
-        ar[end] = item;
+
 //        if (head+size <= ar.length)
 //        {
 //            ar[head+size-1] = item;
@@ -187,6 +205,21 @@ public class ArrayDeque<T>
             }
             System.out.println("");
         }
+    }
+    public static void main(String[] args)
+    {
+        ArrayDeque<String> ar = new ArrayDeque<>();
+        ar.removeFirst();
+        ar.addLast("haha");
+        ar.addLast("li");
+        ar.addFirst("wangwu");
+        ar.printDeque();
+        System.out.println(ar.size());
+        ar.removeFirst();
+        ar.addLast("zansan");
+        ar.removeLast();
+        System.out.println(ar.get(2));
+
     }
 }
 /**
