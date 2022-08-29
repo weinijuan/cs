@@ -130,11 +130,11 @@ public class ArrayDeque<T> {
         size--;
         T temp = ar[end];
         ar[end] = null;
-        if (end == 0) {
-            end = ar.length - 1;
-        } else if (size == 0)
-        {
+        if (size == 0) {
             end = 0;
+        } else if (end == 0)
+        {
+            end = ar.length - 1;
         } else {
             end--;
         }
