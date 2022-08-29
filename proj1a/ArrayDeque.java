@@ -103,9 +103,6 @@ public class ArrayDeque<T> {
     }
 
     public T removeFirst() {
-        if (size == 0) {
-            return null;
-        }
         if ((double) size / ar.length < 0.25 && ar.length >= 16) {
             resize(0.5);
         }
@@ -113,6 +110,8 @@ public class ArrayDeque<T> {
         T temp = ar[head];
         ar[head] = null;
         if (head == ar.length - 1) {
+            head = 0;
+        } else if (size == 0) {
             head = 0;
         } else {
             head++;
@@ -122,6 +121,7 @@ public class ArrayDeque<T> {
 
     public T removeLast() {
         if (size == 0) {
+            end = head = 0;
             return null;
         }
         if ((double) size / ar.length < 0.25 && ar.length >= 16) {
@@ -132,6 +132,9 @@ public class ArrayDeque<T> {
         ar[end] = null;
         if (end == 0) {
             end = ar.length - 1;
+        } else if (size == 0)
+        {
+            end = 0;
         } else {
             end--;
         }
