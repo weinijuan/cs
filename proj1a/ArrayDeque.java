@@ -161,6 +161,33 @@ public class ArrayDeque<T>
             return ar[head + index];
         }
     }
+    public int size()
+    {
+        return size;
+    }
+    public void printDeque()
+    {
+        if (end > head)
+        {
+            for (int i = head; i <= end; i++)
+            {
+                System.out.print(ar[i]+" ");
+            }
+            System.out.println("");
+        }
+        else if (end < head)
+        {
+            for (int i = head; i < ar.length; i++)
+            {
+                System.out.println(ar[i]+" ");
+            }
+            for (int i = 0; i <= end; i++)
+            {
+                System.out.println(ar[i]+" ");
+            }
+            System.out.println("");
+        }
+    }
 }
 /**
  * public void addFirst(T item): Adds an item of type T to the front of the deque.
