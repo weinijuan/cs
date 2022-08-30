@@ -78,28 +78,28 @@ public class TestPalindrome {
 
 
     }
-    @Test
-    public void testIsPalindrome2()
-    {
-        Palindrome p = new Palindrome();
-        CharacterComparator cc = new OffByOne();
-        assertTrue(p.isPalindrome("a", cc));
-        assertTrue(p.isPalindrome("acb",cc));
-        assertTrue(p.isPalindrome("aihb",cc));
-        assertFalse(p.isPalindrome("abba",cc));
-        assertTrue(p.isPalindrome("flake    ",cc));
-
-    }
-    @Test
-    public void testIsPalindrome3()
-    {
-        Palindrome p = new Palindrome();
-        CharacterComparator cc = new OffByN(3);
-        assertTrue(p.isPalindrome("ad",cc));
-        assertTrue(p.isPalindrome("a",cc));
-        assertTrue(p.isPalindrome("",cc));
-        assertTrue(p.isPalindrome("aed",cc));
-        assertTrue(p.isPalindrome("aebd",cc));
-        assertFalse(p.isPalindrome("abba",cc));
-    }
+//    @Test
+//    public void testIsPalindrome2()
+//    {
+//        Palindrome p = new Palindrome();
+//        CharacterComparator cc = new OffByOne();
+//        assertTrue(p.isPalindrome("a", cc));
+//        assertTrue(p.isPalindrome("acb",cc));
+//        assertTrue(p.isPalindrome("aihb",cc));
+//        assertFalse(p.isPalindrome("abba",cc));
+//        assertTrue(p.isPalindrome("flake    ",cc));
+//
+//    }
+//    @Test
+//    public void testIsPalindrome3()
+//    {
+//        Palindrome p = new Palindrome();
+//        CharacterComparator cc = new OffByN(3);
+//        assertTrue(p.isPalindrome("ad",cc));
+//        assertTrue(p.isPalindrome("a",cc));
+//        assertTrue(p.isPalindrome("",cc));
+//        assertTrue(p.isPalindrome("aed",cc));
+//        assertTrue(p.isPalindrome("aebd",cc));
+//        assertFalse(p.isPalindrome("abba",cc));
+//    }
 }
