@@ -65,6 +65,20 @@ public class TestPalindrome {
         assertTrue(p.isPalindrome("ababa"));
         assertTrue(p.isPalindrome("ab*ba"));
 
+        assertTrue(p.isPalindrome("AbA"));
+        assertTrue(p.isPalindrome("AAA"));
+        assertTrue(p.isPalindrome("$A$"));
+        assertTrue(p.isPalindrome("$AA$"));
+        assertFalse(p.isPalindrome("$Ab$"));
+        assertFalse(p.isPalindrome("AAb$"));
+        assertFalse(p.isPalindrome("AAbb"));
+        assertTrue(p.isPalindrome("AbbA"));
+        assertTrue(p.isPalindrome("Ab*bA"));
+        assertTrue(p.isPalindrome("ab*ba"));
+        assertTrue(p.isPalindrome("catdoggodtac"));
+
+
+
         CharacterComparator cc = new OffByOne();
         assertTrue(p.isPalindrome("",cc));
         assertTrue(p.isPalindrome("a", cc));
@@ -72,9 +86,14 @@ public class TestPalindrome {
         assertTrue(p.isPalindrome("acb",cc));
         assertTrue(p.isPalindrome("aihb",cc));
         assertFalse(p.isPalindrome("abba",cc));
-        assertFalse(p.isPalindrome("abba&",cc));
+        assertFalse(p.isPalindrome("Abba&",cc));
         assertTrue(p.isPalindrome("%bba&",cc));
         assertTrue(p.isPalindrome("flake",cc));
+        assertFalse(p.isPalindrome("Flake",cc));
+        assertTrue(p.isPalindrome("%BA&",cc));
+        assertTrue(p.isPalindrome("%BcA&",cc));
+
+
 
 
     }
@@ -88,7 +107,7 @@ public class TestPalindrome {
 //        assertTrue(p.isPalindrome("aihb",cc));
 //        assertFalse(p.isPalindrome("abba",cc));
 //        assertTrue(p.isPalindrome("flake    ",cc));
-//
+//1
 //    }
 //    @Test
 //    public void testIsPalindrome3()
