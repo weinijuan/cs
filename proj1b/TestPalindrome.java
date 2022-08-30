@@ -22,6 +22,7 @@ public class TestPalindrome {
         assertTrue(p.isPalindrome("a"));
         assertTrue(p.isPalindrome(""));
         assertTrue(p.isPalindrome("aba"));
+        assertTrue(p.isPalindrome("!a!"));
         assertFalse(p.isPalindrome("aat"));
         assertFalse(p.isPalindrome("cat"));
         assertFalse(p.isPalindrome("zansan"));
@@ -43,7 +44,7 @@ public class TestPalindrome {
     public void testIsPalindrome3()
     {
         Palindrome p = new Palindrome();
-        CharacterComparator cc = new OffByN();
+        CharacterComparator cc = new OffByN(3);
         assertTrue(p.isPalindrome("ad",cc));
         assertTrue(p.isPalindrome("a",cc));
         assertTrue(p.isPalindrome("",cc));
