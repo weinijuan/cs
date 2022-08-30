@@ -19,14 +19,64 @@ public class TestPalindrome {
     public void testIsPalindrome()
     {
         Palindrome p = new Palindrome();
-        assertTrue(p.isPalindrome("a"));
         assertTrue(p.isPalindrome(""));
+        assertTrue(p.isPalindrome("a"));
+        assertTrue(p.isPalindrome("&"));
+        assertTrue(p.isPalindrome("aa"));
+        assertTrue(p.isPalindrome("&&"));
+        assertFalse(p.isPalindrome("&a"));
+        assertFalse(p.isPalindrome("ab"));
+        assertFalse(p.isPalindrome("abc"));
+        assertFalse(p.isPalindrome("aac"));
+        assertFalse(p.isPalindrome("aa&"));
+        assertFalse(p.isPalindrome("a&&"));
+        assertTrue(p.isPalindrome("a&a"));
         assertTrue(p.isPalindrome("aba"));
-        assertTrue(p.isPalindrome("!a!"));
-        assertFalse(p.isPalindrome("aat"));
-        assertFalse(p.isPalindrome("cat"));
-        assertFalse(p.isPalindrome("zansan"));
+        assertTrue(p.isPalindrome("aaa"));
+        assertTrue(p.isPalindrome("$a$"));
+        assertTrue(p.isPalindrome("$aa$"));
+        assertFalse(p.isPalindrome("$ab$"));
+        assertFalse(p.isPalindrome("aab$"));
+        assertFalse(p.isPalindrome("aabb"));
+        assertTrue(p.isPalindrome("abba"));
+        assertTrue(p.isPalindrome("ababa"));
+        assertTrue(p.isPalindrome("ab*ba"));
+
+        assertTrue(p.isPalindrome(""));
+        assertTrue(p.isPalindrome("a"));
+        assertTrue(p.isPalindrome("A"));
+        assertTrue(p.isPalindrome("aa"));
+        assertTrue(p.isPalindrome("A"));
         assertFalse(p.isPalindrome("Aa"));
+        assertFalse(p.isPalindrome("ab"));
+        assertFalse(p.isPalindrome("abc"));
+        assertFalse(p.isPalindrome("aac"));
+        assertFalse(p.isPalindrome("aaA"));
+        assertFalse(p.isPalindrome("aA"));
+        assertTrue(p.isPalindrome("aAa"));
+        assertTrue(p.isPalindrome("aba"));
+        assertTrue(p.isPalindrome("aaa"));
+        assertTrue(p.isPalindrome("$a$"));
+        assertTrue(p.isPalindrome("$aa$"));
+        assertFalse(p.isPalindrome("$ab$"));
+        assertFalse(p.isPalindrome("aab$"));
+        assertFalse(p.isPalindrome("aabb"));
+        assertTrue(p.isPalindrome("abba"));
+        assertTrue(p.isPalindrome("ababa"));
+        assertTrue(p.isPalindrome("ab*ba"));
+
+        CharacterComparator cc = new OffByOne();
+        assertTrue(p.isPalindrome("",cc));
+        assertTrue(p.isPalindrome("a", cc));
+        assertTrue(p.isPalindrome("ab", cc));
+        assertTrue(p.isPalindrome("acb",cc));
+        assertTrue(p.isPalindrome("aihb",cc));
+        assertFalse(p.isPalindrome("abba",cc));
+        assertFalse(p.isPalindrome("abba&",cc));
+        assertTrue(p.isPalindrome("%bba&",cc));
+        assertTrue(p.isPalindrome("flake",cc));
+
+
     }
     @Test
     public void testIsPalindrome2()
