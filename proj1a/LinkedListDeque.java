@@ -29,23 +29,19 @@ public class LinkedListDeque<T> {
         size = 0;
     }
 
-    //    public LinkedListDeque(LinkedListDeque other)
-//    {
-////        head = new Node<T>(null,null,null);
-////        end = new Node<T>(null,null,null);
-////        head.next = end.prev;
-////        size = 0;
-//        this();
-//        if (other != null)
-//        {
-//            Node<T> temp = other.head.next;
-//            for (int i = 0; i < other.size; i++)
-//            {
-//                addLast(temp.data);
-//                temp = temp.next;
-//            }
-//        }
-//    }
+        public LinkedListDeque(LinkedListDeque other)
+    {
+        this();
+        if (other != null)
+        {
+            Node<T> temp = other.head.next;
+            for (int i = 0; i < other.size; i++)
+            {
+                addLast(temp.data);
+                temp = temp.next;
+            }
+        }
+    }
     public void addFirst(T item) {
         size++;
         head.next = new Node<>(item, head, head.next);

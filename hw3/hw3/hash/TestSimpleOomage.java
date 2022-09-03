@@ -29,6 +29,20 @@ public class TestSimpleOomage {
           meaning no two SimpleOomages should EVER have the same
           hashCode UNLESS they have the same red, blue, and green values!
          */
+        SimpleOomage ooA = new SimpleOomage(5, 10, 20);
+        SimpleOomage ooC = new SimpleOomage(10, 10, 15);
+        SimpleOomage ooA3 = new SimpleOomage(10, 10, 20);
+        SimpleOomage ooA4 = new SimpleOomage(5, 20, 20);
+        SimpleOomage ooA5 = new SimpleOomage(5, 10, 30);
+        SimpleOomage ooA2 = new SimpleOomage(5, 10, 20);
+        SimpleOomage ooB = new SimpleOomage(50, 50, 50);
+        assertEquals(ooA.hashCode(), ooA2.hashCode());
+        assertNotEquals(ooA.hashCode(), ooB.hashCode());
+        assertNotEquals(ooA.hashCode(), ooA3.hashCode());
+        assertNotEquals(ooA.hashCode(), ooA4.hashCode());
+        assertNotEquals(ooA.hashCode(), ooA5.hashCode());
+        assertNotEquals(ooA.hashCode(), ooC.hashCode());
+
     }
 
     @Test
@@ -42,18 +56,18 @@ public class TestSimpleOomage {
         assertNotEquals(ooA, "ketchup");
     }
 
-    /*
     @Test
     public void testHashCodeAndEqualsConsistency() {
         SimpleOomage ooA = new SimpleOomage(5, 10, 20);
         SimpleOomage ooA2 = new SimpleOomage(5, 10, 20);
+        System.out.println(ooA.equals(ooA2));
         HashSet<SimpleOomage> hashSet = new HashSet<>();
         hashSet.add(ooA);
         assertTrue(hashSet.contains(ooA2));
-    }*/
+    }
 
     /* TODO: Uncomment this test after you finish haveNiceHashCode Spread in OomageTestUtility */
-    /*@Test
+    @Test
     public void testRandomOomagesHashCodeSpread() {
         List<Oomage> oomages = new ArrayList<>();
         int N = 10000;
@@ -63,7 +77,7 @@ public class TestSimpleOomage {
         }
 
         assertTrue(OomageTestUtility.haveNiceHashCodeSpread(oomages, 10));
-    }*/
+    }
 
     /** Calls tests for SimpleOomage. */
     public static void main(String[] args) {
