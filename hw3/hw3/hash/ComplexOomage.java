@@ -12,9 +12,10 @@ public class ComplexOomage implements Oomage {
     @Override
     public int hashCode() {
         int total = 0;
-        for (int x : params) {
-            total = total * 256;
-            total = total + x;
+        int min = 3 < params.size()? 3: params.size();
+        for (int i = 0; i<min; i++) {
+            total = total * 257;
+            total = total + params.get(i);
         }
         return total;
     }

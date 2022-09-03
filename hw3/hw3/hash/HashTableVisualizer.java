@@ -15,7 +15,7 @@ public class HashTableVisualizer {
            scale = 0.5, N = 2000, M = 100. */
 
         double scale = 1;
-        int N = 1000;
+        int N = 100;
         int M = 10;
 
         HashTableDrawingUtility.setScale(scale);
